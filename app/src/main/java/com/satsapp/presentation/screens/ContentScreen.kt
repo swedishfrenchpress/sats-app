@@ -3,6 +3,7 @@ package com.satsapp.presentation.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -62,15 +63,51 @@ fun ContentScreen(
  * In iOS, TabView automatically creates the tab bar.
  * In Android, we use Scaffold with NavigationBar.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun MainAppWithTabs(
     viewModel: WalletViewModel
 ) {
     // Track which tab is selected (0 = Transact, 1 = Activity)
     var selectedTab by remember { mutableIntStateOf(0) }
+    var showSettings by remember { mutableStateOf(false) }
     
-    // Scaffold provides the app structure (content + bottom bar)
+    // Show settings screen if requested
+    if (showSettings) {
+        SettingsScreen(
+            viewModel = viewModel,
+            onNavigateBack = { showSettings = false }
+        )
+        return
+    }
+    
+    // Scaffold provides the app structure (top bar + content + bottom bar)
     Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    // Show balance in the header instead of tab name
+                    val walletState by viewModel.walletState.collectAsState()
+                    Text(
+                        text = "${walletState.balance} sat",
+                        style = MaterialTheme.typography.headlineLarge
+                    )
+                },
+                actions = {
+                    // Settings icon button
+                    IconButton(onClick = { showSettings = true }) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "Settings",
+                            tint = MaterialTheme.colorScheme.onBackground
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                )
+            )
+        },
         bottomBar = {
             // Bottom navigation bar (like iOS tabItem)
             NavigationBar(

@@ -48,7 +48,8 @@ fun TransactScreen(
 ) {
     // Local state for amount input
     var amount by remember { mutableStateOf("0") }
-    var showTransactSheet by remember { mutableStateOf(false) }
+    var showDepositSheet by remember { mutableStateOf(false) }
+    var showQRScanner by remember { mutableStateOf(false) }
     var transactMode by remember { mutableStateOf(TransactMode.PAY) }
     
     // Load balance when screen appears
@@ -56,107 +57,89 @@ fun TransactScreen(
         viewModel.refreshBalance()
     }
     
-    // Main container
-    Scaffold(
-        topBar = {
-            // TODO: Replace with BalanceToolbar
-            CenterAlignedTopAppBar(
-                title = {
-                    Text("Transact")
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background
-                )
-            )
-        }
-    ) { paddingValues ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
-                .padding(paddingValues),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(modifier = Modifier.weight(1f))
-            
-            // AMOUNT DISPLAY
-            // Large text showing the amount user is entering
-            // iOS: .font(.system(size: 48, weight: .light))
-            Text(
-                text = "$amount sat",
-                style = MaterialTheme.typography.displayLarge,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(horizontal = 20.dp)
-            )
-            
-            Spacer(modifier = Modifier.weight(1f))
-            
-            // NUMBER PAD
-            NumberPad(
-                amount = amount,
-                onAmountChange = { amount = it }
-            )
-            
-            Spacer(modifier = Modifier.height(20.dp))
-            
-            // ACTION BUTTONS
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                // REQUEST BUTTON
-                PrimaryButton(
-                    onClick = {
-                        transactMode = TransactMode.REQUEST
-                        showTransactSheet = true
-                    },
-                    modifier = Modifier.weight(1f)
-                ) {
-                    Text("Request")
-                }
-                
-                // QR CODE SCANNER BUTTON (compact square button)
-                CompactButton(
-                    onClick = {
-                        // TODO: Open QR scanner
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.QrCodeScanner,
-                        contentDescription = "Scan QR Code",
-                        tint = MaterialTheme.colorScheme.primary
-                    )
-                }
-                
-                // PAY BUTTON
-                PrimaryButton(
-                    onClick = {
-                        transactMode = TransactMode.PAY
-                        showTransactSheet = true
-                    },
-                    modifier = Modifier.weight(1f)
-                ) {
-                    Text("Pay")
-                }
-            }
-            
-            Spacer(modifier = Modifier.height(20.dp))
-        }
+    // Show QR Scanner if requested
+    if (showQRScanner) {
+        QRScannerScreen(
+            viewModel = viewModel,
+            onNavigateBack = { showQRScanner = false }
+        )
+        return
     }
     
-    // MODAL SHEET (appears when user taps Pay or Request)
-    // iOS: .sheet(isPresented: $showingTransactSheet) { ... }
-    // Android: ModalBottomSheet or Dialog
-    if (showTransactSheet) {
-        TransactSheet(
+    // Main container without top bar (balance is shown in main header)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Spacer(modifier = Modifier.weight(1f))
+        
+        // AMOUNT DISPLAY
+        // Large text showing the amount user is entering
+        // iOS: .font(.system(size: 48, weight: .light))
+        Text(
+            text = "$amount sat",
+            style = MaterialTheme.typography.displayLarge,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.padding(horizontal = 20.dp)
+        )
+        
+        Spacer(modifier = Modifier.weight(1f))
+        
+        // NUMBER PAD
+        NumberPad(
             amount = amount,
-            mode = transactMode,
-            onDismiss = {
-                showTransactSheet = false
-                amount = "0" // Reset amount
+            onAmountChange = { amount = it }
+        )
+        
+        Spacer(modifier = Modifier.height(20.dp))
+        
+        // ACTION BUTTONS
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            // REQUEST BUTTON - Opens deposit sheet
+            PrimaryButton(
+                onClick = { showDepositSheet = true },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text("Request")
             }
+            
+            // QR CODE SCANNER BUTTON (compact square button)
+            CompactButton(
+                onClick = { showQRScanner = true }
+            ) {
+                Icon(
+                    imageVector = Icons.Default.QrCodeScanner,
+                    contentDescription = "Scan QR Code",
+                    tint = MaterialTheme.colorScheme.primary
+                )
+            }
+            
+            // PAY BUTTON - TODO: Implement send flow
+            PrimaryButton(
+                onClick = {
+                    // TODO: Show send sheet when send() is implemented
+                },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text("Pay")
+            }
+        }
+        
+        Spacer(modifier = Modifier.height(20.dp))
+    }
+    
+    // DEPOSIT SHEET (Request Bitcoin via Lightning)
+    if (showDepositSheet) {
+        DepositSheet(
+            viewModel = viewModel,
+            onDismiss = { showDepositSheet = false }
         )
     }
 }
@@ -269,44 +252,8 @@ enum class TransactMode {
         }
 }
 
-/**
- * TransactSheet - Payment/Request modal sheet
- * 
- * This is a simplified version. Full implementation would include:
- * - Payment method selection (Link, Username, QR, NFC)
- * - Memo field
- * - Confirmation
- * 
- * See TransactSheetView in Swift for full details
- */
-@Composable
-private fun TransactSheet(
-    amount: String,
-    mode: TransactMode,
-    onDismiss: () -> Unit
-) {
-    // For now, show a simple dialog
-    // TODO: Implement full TransactSheetView (separate file)
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text(if (mode == TransactMode.PAY) "Pay" else "Request")
-        },
-        text = {
-            Text("$amount sat")
-        },
-        confirmButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Confirm")
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Cancel")
-            }
-        }
-    )
-}
+// TransactSheet removed - now using DepositSheet for requests
+// and QRScannerScreen for scanning tokens
 
 /*
  * LEARNING NOTES:

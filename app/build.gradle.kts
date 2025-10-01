@@ -54,6 +54,11 @@ android {
 dependencies {
     // CDK-Kotlin for Cashu functionality
     implementation("org.cashudevkit:cdk-kotlin:v0.13.1")
+    
+    // Ktor HTTP client for CDK (Android engine)
+    implementation("io.ktor:ktor-client-android:2.3.7")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
 
     // AndroidX Core
     implementation("androidx.core:core-ktx:1.12.0")
@@ -67,6 +72,17 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
+    
+    // CameraX for QR scanning
+    implementation("androidx.camera:camera-camera2:1.3.1")
+    implementation("androidx.camera:camera-lifecycle:1.3.1")
+    implementation("androidx.camera:camera-view:1.3.1")
+    
+    // ML Kit Barcode Scanning
+    implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    
+    // Accompanist Permissions
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")

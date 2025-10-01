@@ -1,57 +1,91 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-25:12
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-26:12
+INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:2:1-26:12
 MERGED from [org.cashudevkit:cdk-kotlin:v0.13.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d00e53a07efa5cc2bf4577dd2f995e66/transformed/jetified-cdk-kotlin-v0.13.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.camera:camera-video:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f4907905de6229ffc5219ff3db39f192/transformed/jetified-camera-video-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-view:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/8f056890a82b6f53099a0bc6760f180d/transformed/jetified-camera-view-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/228992c6e927231a64f276f7e3c9e9d9/transformed/jetified-camera-lifecycle-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4b60ae5e28db6c9142278c5ec10810dc/transformed/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5fc8e1f81ba84f4e7ed1f523120f6705/transformed/jetified-barcode-scanning-17.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b73a5ad09933ca973cec449977672a84/transformed/jetified-barcode-scanning-common-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5fa50e2ed516ae018ad7526d45a74dd1/transformed/jetified-vision-interfaces-16.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e48b984db09f6ca426f52eff7d3940de/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2e9cf06dddaed5677988f821020e7472/transformed/jetified-accompanist-permissions-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2bcf8165e3da6db9d72f4101f3bec7bb/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7a56403a9de25af14f336289fff8bec4/transformed/jetified-activity-1.8.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/588f3ac80d1826ef9f035ec0c37c45f3/transformed/jetified-activity-ktx-1.8.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7b68e7c0be878566af43cc77a603fdaf/transformed/jetified-material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/a4517f8f65e817abe91b62e08a5024d6/transformed/jetified-material-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d5170403030a71104246a5d397545e08/transformed/jetified-material-icons-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/22fadd3920784591847d53c9b0f85300/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/51876d6f9a90ca7aba6238e77a4dbc7f/transformed/jetified-material-ripple-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/27a3ca8f7d1395ff08183cca2555c5af/transformed/jetified-foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d51ad1547eee726ab9d9063694214051/transformed/jetified-animation-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.animation:animation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e3acf8068dc8033e70d8b590e91b30fc/transformed/jetified-animation-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/a9a0d1b2e15cab63d71c71ac2da9917b/transformed/jetified-foundation-layout-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d51ad1547eee726ab9d9063694214051/transformed/jetified-animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/27a3ca8f7d1395ff08183cca2555c5af/transformed/jetified-foundation-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb0adf0c5585c7d28c62d15f56b52637/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9481a5582aa448479dd56f4780138a4b/transformed/jetified-ui-unit-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d3f075945bd64298b7e0c03504483f5f/transformed/jetified-ui-geometry-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f58bd5c5105b70eb444acafc6af23f96/transformed/jetified-ui-util-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0116ad95cd1ec71deff618370ff98ac7/transformed/jetified-ui-text-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/434c0ca2bf189ea9d135b54364ab400d/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/ab223da6049d38d7f5a7fa640cef6af7/transformed/jetified-ui-graphics-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:17:1-28:12
-MERGED from [androidx.activity:activity:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7a56403a9de25af14f336289fff8bec4/transformed/jetified-activity-1.8.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity-ktx:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/588f3ac80d1826ef9f035ec0c37c45f3/transformed/jetified-activity-ktx-1.8.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.activity:activity-compose:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d698e8260bdd2242a9d1f1f060305b66/transformed/jetified-activity-compose-1.8.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b575fa2623f375a38ab7c441b8e3ba70/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1611a105cf38ff565ae87c2238d0385b/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/caf87e38a28b53af65514b1e5e03b1ad/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/59071b778561e9e3129adfac8f5a828c/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/fdaffcb7fbace1fcd267ac3423c427b0/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3bf67f14745b5d1b151de31da302bf22/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/933768022e4b2bd1c704c21e513566e6/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3fdffe201a6046bac112e8c4237dc082/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3bf67f14745b5d1b151de31da302bf22/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eedd11c192ad2d2e9198694b8999c78e/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6f4dc0c70ff3f2f65830bc8b4c59c91b/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e53c2117beffe86dc9be7fa60ec171c6/transformed/jetified-lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/c1de529880d7648b5e3387ceba0d4ca8/transformed/jetified-lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/adaa2756598bea49f254aeadf0acb601/transformed/jetified-lifecycle-viewmodel-compose-2.6.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.ui:ui-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/bbcb3320f324d7881575af8696cf3bd6/transformed/jetified-ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2f4f47860bed942813bce328f8d7bdca/transformed/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2182529c5416af00b633e77fe5087c05/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f88469050cea6ff8b04dfa6d349e9226/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ef37d08565d6bf84ae38ea346e39667/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/215c0e1d7eb97e5ed9999f4f3c2e1690/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6de9b202f2e04b2124526e401f005c73/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b9850049dd69a69bdb5ce82c31ed6ad7/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.12.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb52d36e679aa54282613e1a69f2556a/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1e2c81ef181215c090b437dd4161699b/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7f8d68ac53d32e1881d59e513702a0e8/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0edae02420f50050e619330588eb303d/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5b1f754e56a1260461aa7db13d365b7a/transformed/jetified-runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/80870916ee58205a8368eb891323f280/transformed/jetified-napier-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/82672e373d617f25c751ff0e11e2d683/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/edbcd2b27e5e5bf65cee346c67bfca10/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/c8456cb3b48a4ea5cecb01c6d6142510/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3fd97c3f262916553936c549e906c858/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0eea0062bf6a8eeb1e2c30975e77d5b8/transformed/exifinterface-1.3.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/ee1ae53d630f7439d997021bf84a9fa2/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:15:1-38:12
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/8228925f6d3cf33d494507c739544f1f/transformed/jetified-transport-api-2.2.1/AndroidManifest.xml:15:1-22:12
+MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/aea39642fc3b59b39eb755605f037fc4/transformed/jetified-firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/c0609aefbee1768515781034626042f2/transformed/jetified-firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0ec6e795936164e7f3db723de4793d8c/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77a506f76e72f6ca208ece3fd44ab64b/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [net.java.dev.jna:jna:5.14.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1db01151a28285238488cf9b75b7bc8d/transformed/jetified-jna-5.14.0/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5255f35ce6ed4e8e02c25ecc7b974696/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
 	package
 		INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -64,19 +98,45 @@ uses-permission#android.permission.INTERNET
 ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:4:5-67
 MERGED from [org.cashudevkit:cdk-kotlin:v0.13.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d00e53a07efa5cc2bf4577dd2f995e66/transformed/jetified-cdk-kotlin-v0.13.1/AndroidManifest.xml:7:5-67
 MERGED from [org.cashudevkit:cdk-kotlin:v0.13.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d00e53a07efa5cc2bf4577dd2f995e66/transformed/jetified-cdk-kotlin-v0.13.1/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
 	android:name
 		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
 	android:name
 		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:6:22-62
 application
-ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:7:5-23:19
-INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:7:5-23:19
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:8:5-24:19
+INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:8:5-24:19
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:23:5-34:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e48b984db09f6ca426f52eff7d3940de/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e48b984db09f6ca426f52eff7d3940de/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b575fa2623f375a38ab7c441b8e3ba70/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b575fa2623f375a38ab7c441b8e3ba70/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1611a105cf38ff565ae87c2238d0385b/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
@@ -87,48 +147,92 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/erik
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/edbcd2b27e5e5bf65cee346c67bfca10/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0ec6e795936164e7f3db723de4793d8c/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0ec6e795936164e7f3db723de4793d8c/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5255f35ce6ed4e8e02c25ecc7b974696/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5255f35ce6ed4e8e02c25ecc7b974696/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:7:5-20
 	android:extractNativeLibs
 		INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb52d36e679aa54282613e1a69f2556a/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:12:9-41
 	android:icon
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:10:9-58
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:11:9-58
 	android:allowBackup
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:13:9-45
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:14:9-45
 	android:name
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:8:9-40
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:9:9-40
 activity#com.satsapp.MainActivity
-ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:14:9-22:20
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:15:9-23:20
 	android:exported
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:16:13-36
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:17:13-36
 	android:theme
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:17:13-49
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:18:13-49
 	android:name
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:15:13-41
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:16:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:18:13-21:29
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:19:17-69
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:19:25-66
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:20:17-77
+ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:20:27-74
+		ADDED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml:21:27-74
 uses-sdk
 INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
 INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
 MERGED from [org.cashudevkit:cdk-kotlin:v0.13.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d00e53a07efa5cc2bf4577dd2f995e66/transformed/jetified-cdk-kotlin-v0.13.1/AndroidManifest.xml:5:5-44
 MERGED from [org.cashudevkit:cdk-kotlin:v0.13.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d00e53a07efa5cc2bf4577dd2f995e66/transformed/jetified-cdk-kotlin-v0.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f4907905de6229ffc5219ff3db39f192/transformed/jetified-camera-video-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f4907905de6229ffc5219ff3db39f192/transformed/jetified-camera-video-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-view:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/8f056890a82b6f53099a0bc6760f180d/transformed/jetified-camera-view-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/8f056890a82b6f53099a0bc6760f180d/transformed/jetified-camera-view-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/228992c6e927231a64f276f7e3c9e9d9/transformed/jetified-camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/228992c6e927231a64f276f7e3c9e9d9/transformed/jetified-camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4b60ae5e28db6c9142278c5ec10810dc/transformed/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4b60ae5e28db6c9142278c5ec10810dc/transformed/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5fc8e1f81ba84f4e7ed1f523120f6705/transformed/jetified-barcode-scanning-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5fc8e1f81ba84f4e7ed1f523120f6705/transformed/jetified-barcode-scanning-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b73a5ad09933ca973cec449977672a84/transformed/jetified-barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b73a5ad09933ca973cec449977672a84/transformed/jetified-barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5fa50e2ed516ae018ad7526d45a74dd1/transformed/jetified-vision-interfaces-16.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5fa50e2ed516ae018ad7526d45a74dd1/transformed/jetified-vision-interfaces-16.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e48b984db09f6ca426f52eff7d3940de/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e48b984db09f6ca426f52eff7d3940de/transformed/jetified-play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2e9cf06dddaed5677988f821020e7472/transformed/jetified-accompanist-permissions-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2e9cf06dddaed5677988f821020e7472/transformed/jetified-accompanist-permissions-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2bcf8165e3da6db9d72f4101f3bec7bb/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2bcf8165e3da6db9d72f4101f3bec7bb/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7a56403a9de25af14f336289fff8bec4/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7a56403a9de25af14f336289fff8bec4/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/588f3ac80d1826ef9f035ec0c37c45f3/transformed/jetified-activity-ktx-1.8.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/588f3ac80d1826ef9f035ec0c37c45f3/transformed/jetified-activity-ktx-1.8.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7b68e7c0be878566af43cc77a603fdaf/transformed/jetified-material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7b68e7c0be878566af43cc77a603fdaf/transformed/jetified-material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material:material-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/a4517f8f65e817abe91b62e08a5024d6/transformed/jetified-material-release/AndroidManifest.xml:5:5-44
@@ -139,14 +243,14 @@ MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /U
 MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/22fadd3920784591847d53c9b0f85300/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/51876d6f9a90ca7aba6238e77a4dbc7f/transformed/jetified-material-ripple-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/51876d6f9a90ca7aba6238e77a4dbc7f/transformed/jetified-material-ripple-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/27a3ca8f7d1395ff08183cca2555c5af/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/27a3ca8f7d1395ff08183cca2555c5af/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d51ad1547eee726ab9d9063694214051/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d51ad1547eee726ab9d9063694214051/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.animation:animation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e3acf8068dc8033e70d8b590e91b30fc/transformed/jetified-animation-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.animation:animation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/e3acf8068dc8033e70d8b590e91b30fc/transformed/jetified-animation-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/a9a0d1b2e15cab63d71c71ac2da9917b/transformed/jetified-foundation-layout-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/a9a0d1b2e15cab63d71c71ac2da9917b/transformed/jetified-foundation-layout-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d51ad1547eee726ab9d9063694214051/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d51ad1547eee726ab9d9063694214051/transformed/jetified-animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/27a3ca8f7d1395ff08183cca2555c5af/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/27a3ca8f7d1395ff08183cca2555c5af/transformed/jetified-foundation-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb0adf0c5585c7d28c62d15f56b52637/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb0adf0c5585c7d28c62d15f56b52637/transformed/jetified-ui-tooling-data-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9481a5582aa448479dd56f4780138a4b/transformed/jetified-ui-unit-release/AndroidManifest.xml:5:5-44
@@ -159,16 +263,12 @@ MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /Users/erik/.gradle/cach
 MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0116ad95cd1ec71deff618370ff98ac7/transformed/jetified-ui-text-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/434c0ca2bf189ea9d135b54364ab400d/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/434c0ca2bf189ea9d135b54364ab400d/transformed/jetified-ui-tooling-preview-release/AndroidManifest.xml:20:5-44
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/ab223da6049d38d7f5a7fa640cef6af7/transformed/jetified-ui-graphics-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/ab223da6049d38d7f5a7fa640cef6af7/transformed/jetified-ui-graphics-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7a56403a9de25af14f336289fff8bec4/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7a56403a9de25af14f336289fff8bec4/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity-ktx:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/588f3ac80d1826ef9f035ec0c37c45f3/transformed/jetified-activity-ktx-1.8.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.activity:activity-ktx:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/588f3ac80d1826ef9f035ec0c37c45f3/transformed/jetified-activity-ktx-1.8.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-compose:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d698e8260bdd2242a9d1f1f060305b66/transformed/jetified-activity-compose-1.8.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity-compose:1.8.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/d698e8260bdd2242a9d1f1f060305b66/transformed/jetified-activity-compose-1.8.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b575fa2623f375a38ab7c441b8e3ba70/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
@@ -177,12 +277,16 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/erik/.gradle/cac
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1611a105cf38ff565ae87c2238d0385b/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/caf87e38a28b53af65514b1e5e03b1ad/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/caf87e38a28b53af65514b1e5e03b1ad/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/59071b778561e9e3129adfac8f5a828c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/59071b778561e9e3129adfac8f5a828c/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/fdaffcb7fbace1fcd267ac3423c427b0/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/fdaffcb7fbace1fcd267ac3423c427b0/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3bf67f14745b5d1b151de31da302bf22/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3bf67f14745b5d1b151de31da302bf22/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/933768022e4b2bd1c704c21e513566e6/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/933768022e4b2bd1c704c21e513566e6/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3fdffe201a6046bac112e8c4237dc082/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3fdffe201a6046bac112e8c4237dc082/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3bf67f14745b5d1b151de31da302bf22/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3bf67f14745b5d1b151de31da302bf22/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eedd11c192ad2d2e9198694b8999c78e/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eedd11c192ad2d2e9198694b8999c78e/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6f4dc0c70ff3f2f65830bc8b4c59c91b/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
@@ -195,8 +299,20 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2] /Users/erik/.
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/adaa2756598bea49f254aeadf0acb601/transformed/jetified-lifecycle-viewmodel-compose-2.6.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/bbcb3320f324d7881575af8696cf3bd6/transformed/jetified-ui-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/bbcb3320f324d7881575af8696cf3bd6/transformed/jetified-ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2f4f47860bed942813bce328f8d7bdca/transformed/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2f4f47860bed942813bce328f8d7bdca/transformed/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2182529c5416af00b633e77fe5087c05/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2182529c5416af00b633e77fe5087c05/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f88469050cea6ff8b04dfa6d349e9226/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/f88469050cea6ff8b04dfa6d349e9226/transformed/jetified-autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ef37d08565d6bf84ae38ea346e39667/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ef37d08565d6bf84ae38ea346e39667/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/215c0e1d7eb97e5ed9999f4f3c2e1690/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/215c0e1d7eb97e5ed9999f4f3c2e1690/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6de9b202f2e04b2124526e401f005c73/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6de9b202f2e04b2124526e401f005c73/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b9850049dd69a69bdb5ce82c31ed6ad7/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b9850049dd69a69bdb5ce82c31ed6ad7/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.12.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb52d36e679aa54282613e1a69f2556a/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.12.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/eb52d36e679aa54282613e1a69f2556a/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1e2c81ef181215c090b437dd4161699b/transformed/jetified-customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
@@ -207,6 +323,8 @@ MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /Users/eri
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0edae02420f50050e619330588eb303d/transformed/jetified-runtime-saveable-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5b1f754e56a1260461aa7db13d365b7a/transformed/jetified-runtime-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5b1f754e56a1260461aa7db13d365b7a/transformed/jetified-runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/80870916ee58205a8368eb891323f280/transformed/jetified-napier-debug/AndroidManifest.xml:7:5-9:41
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/80870916ee58205a8368eb891323f280/transformed/jetified-napier-debug/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/82672e373d617f25c751ff0e11e2d683/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/82672e373d617f25c751ff0e11e2d683/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/edbcd2b27e5e5bf65cee346c67bfca10/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
@@ -217,29 +335,119 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/erik/.gradle/caches/9
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/3fd97c3f262916553936c549e906c858/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0eea0062bf6a8eeb1e2c30975e77d5b8/transformed/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0eea0062bf6a8eeb1e2c30975e77d5b8/transformed/exifinterface-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/ee1ae53d630f7439d997021bf84a9fa2/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/ee1ae53d630f7439d997021bf84a9fa2/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/8228925f6d3cf33d494507c739544f1f/transformed/jetified-transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/8228925f6d3cf33d494507c739544f1f/transformed/jetified-transport-api-2.2.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/aea39642fc3b59b39eb755605f037fc4/transformed/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/aea39642fc3b59b39eb755605f037fc4/transformed/jetified-firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/c0609aefbee1768515781034626042f2/transformed/jetified-firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/c0609aefbee1768515781034626042f2/transformed/jetified-firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0ec6e795936164e7f3db723de4793d8c/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/0ec6e795936164e7f3db723de4793d8c/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77a506f76e72f6ca208ece3fd44ab64b/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77a506f76e72f6ca208ece3fd44ab64b/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [net.java.dev.jna:jna:5.14.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1db01151a28285238488cf9b75b7bc8d/transformed/jetified-jna-5.14.0/AndroidManifest.xml:7:5-47
 MERGED from [net.java.dev.jna:jna:5.14.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1db01151a28285238488cf9b75b7bc8d/transformed/jetified-jna-5.14.0/AndroidManifest.xml:7:5-47
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5255f35ce6ed4e8e02c25ecc7b974696/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/5255f35ce6ed4e8e02c25ecc7b974696/transformed/jetified-image-1.0.0-beta1/AndroidManifest.xml:5:5-44
 	android:targetSdkVersion
 		INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
 		MERGED from /Users/erik/Documents/GitHub/sats-app/app/src/main/AndroidManifest.xml
-activity#androidx.compose.ui.tooling.PreviewActivity
-ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:23:9-25:39
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:24:9-33:19
+	android:enabled
+		ADDED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:31:13-36
 	android:exported
-		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:25:13-36
+		ADDED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:32:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:33:13-75
 	android:name
-		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:24:13-71
+		ADDED from [androidx.camera:camera-core:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/7e6e1b0fc905ea65ffb81bf7445d61c0/transformed/jetified-camera-core-1.3.1/AndroidManifest.xml:30:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.3.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/4240e1d001c3e3254b719493b98b368d/transformed/jetified-camera-camera2-1.3.1/AndroidManifest.xml:31:17-103
+service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:15:9-23:19
+MERGED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:15:9-23:19
+	android:exported
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:11:13-37
+	tools:targetApi
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:19:13-32
+	android:directBootAware
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:17:13-43
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:10:13-91
+meta-data#com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar
+ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b31e59293f27c1c6e797363c9a7197cc/transformed/jetified-play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:13:17-120
+meta-data#com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar
+ADDED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.mlkit:vision-common:17.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/6ba99550f4517d37eb1766fb02dfb1e6/transformed/jetified-vision-common-17.3.0/AndroidManifest.xml:13:17-124
+provider#com.google.mlkit.common.internal.MlKitInitProvider
+ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:9:9-13:38
+	android:authorities
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:11:13-69
+	android:exported
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:13:13-35
+	android:name
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:10:13-78
+meta-data#com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar
+ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.mlkit:common:18.9.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/9058f023bccb3cd942fad3d9c66c3c81/transformed/jetified-common-18.9.0/AndroidManifest.xml:21:17-120
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/37b38d7eef44d14dff905573344d3f45/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/19897a9654c7e9e1f2a3fc0dee64804c/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
 activity#androidx.activity.ComponentActivity
 ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
 	android:exported
 		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
 	android:name
 		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/189c18a1832a88f3d2f1bd106969a51f/transformed/jetified-ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b298683d9f7c417eba5d74ba8acdc431/transformed/jetified-ui-tooling-release/AndroidManifest.xml:24:13-71
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/b575fa2623f375a38ab7c441b8e3ba70/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/1611a105cf38ff565ae87c2238d0385b/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
@@ -330,3 +538,31 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/52f59d18a5beea240fe232735947a1da/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/77e6d97925435bc1a179e66df76cd203/transformed/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/erik/.gradle/caches/9.0-milestone-1/transforms/2ca3262003bfc8e596b7d7dd22906350/transformed/jetified-transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
