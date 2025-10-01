@@ -325,6 +325,35 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
                 }
         }
     }
+    
+    /**
+     * Check if Lightning payment has been received
+     * 
+     * This polls the mint to see if the invoice has been paid
+     * CDK handles all the state - we just check if mintTokens succeeds
+     */
+    fun checkPaymentStatus() {
+        val quoteId = _mintState.value.quoteId ?: return
+        
+        viewModelScope.launch {
+            // Try to mint tokens - if successful, payment was received
+            repository.mintTokens(quoteId)
+                .onSuccess { amount ->
+                    _mintState.update {
+                        it.copy(
+                            isCompleted = true,
+                            isProcessing = false
+                        )
+                    }
+                    // Refresh balance after successful mint
+                    refreshBalance()
+                }
+                .onFailure { error ->
+                    // Payment not yet received, keep polling
+                    // Don't update state - just continue polling
+                }
+        }
+    }
 }
 
 /**

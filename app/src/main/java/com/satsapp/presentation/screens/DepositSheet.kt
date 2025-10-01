@@ -13,6 +13,7 @@ import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -63,8 +64,14 @@ fun DepositSheet(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
-            // Show QR code if invoice was generated, otherwise show input form
-            if (mintState.paymentRequest != null) {
+            // Show success screen if payment received, QR code if invoice generated, otherwise input form
+            if (mintState.isCompleted) {
+                // SUCCESS SCREEN (matches screenshot)
+                DepositSuccessView(
+                    amount = mintState.amount,
+                    onDismiss = onDismiss
+                )
+            } else if (mintState.paymentRequest != null) {
                 // QR CODE DISPLAY (matches screenshot)
                 DepositQRCodeView(
                     amount = mintState.amount,
@@ -318,6 +325,55 @@ private fun handleButtonPress(currentAmount: String, button: String): String {
 }
 
 /**
+ * DepositSuccessView - Shows success screen when payment is received (matches screenshot)
+ */
+@Composable
+private fun DepositSuccessView(
+    amount: ULong,
+    onDismiss: () -> Unit
+) {
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        // Smaller green checkmark (matches screenshot design)
+        Box(
+            modifier = Modifier
+                .size(80.dp)
+                .background(
+                    color = Color(0xFF556B2F), // Dark olive green (matches screenshot)
+                    shape = CircleShape
+                ),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                imageVector = Icons.Default.Check,
+                contentDescription = "Success",
+                tint = Color(0xFF9ACD32), // Light olive green checkmark (matches screenshot)
+                modifier = Modifier.size(40.dp)
+            )
+        }
+        
+        Spacer(modifier = Modifier.height(24.dp))
+        
+        // "Received X sat" text (matches screenshot)
+        Text(
+            text = "Received $amount sat.",
+            style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.onBackground,
+            textAlign = TextAlign.Center
+        )
+        
+        // Auto-dismiss after 3 seconds
+        LaunchedEffect(Unit) {
+            kotlinx.coroutines.delay(3000)
+            onDismiss()
+        }
+    }
+}
+
+/**
  * DepositQRCodeView - Shows QR code after invoice generation (matches screenshot)
  */
 @Composable
@@ -399,6 +455,18 @@ private fun DepositQRCodeView(
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(horizontal = 16.dp)
         )
+        
+        // Monitor payment status
+        LaunchedEffect(invoice) {
+            // Poll for payment status every 2 seconds
+            while (true) {
+                kotlinx.coroutines.delay(2000)
+                viewModel.checkPaymentStatus() // This will update mintState.isCompleted
+                if (viewModel.mintState.value.isCompleted) {
+                    break // Stop polling when payment received
+                }
+            }
+        }
     }
 }
 
