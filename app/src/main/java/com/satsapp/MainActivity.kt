@@ -6,128 +6,76 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.satsapp.presentation.WalletViewModel
+import com.satsapp.presentation.screens.ContentScreen
 import com.satsapp.ui.theme.SatsAppTheme
 
 /**
  * Main Activity - Entry point for the app
- * Sets up Jetpack Compose UI
+ * 
+ * This is where your Android app starts!
+ * 
+ * What happens here:
+ * 1. onCreate() is called when the app launches
+ * 2. setContent { } sets up the Compose UI
+ * 3. SatsAppTheme applies your custom orange/gray theme
+ * 4. ContentScreen shows the main app (tabs, screens, etc.)
+ * 
+ * ContentScreen handles:
+ * - Checking if wallet is initialized
+ * - Showing loading screen if not ready
+ * - Showing main app with tabs if ready
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Set up Compose UI
         setContent {
+            // Apply your custom theme (orange primary, gray secondary)
             SatsAppTheme {
+                // Full-screen surface with themed background
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    WalletScreen()
+                    // Show the main app!
+                    // ContentScreen handles:
+                    // - WalletLoadingScreen (if wallet not initialized)
+                    // - Main app with tabs (if wallet ready)
+                    ContentScreen()
                 }
             }
         }
     }
 }
 
-/**
- * Basic wallet screen to demonstrate backend integration
- * Replace this with your custom UI design
+/*
+ * WHAT CHANGED?
+ * 
+ * BEFORE:
+ * - Simple WalletScreen() with basic buttons
+ * - Manual initialization and refresh
+ * - No navigation or tabs
+ * 
+ * NOW:
+ * - ContentScreen() - Full app from iOS conversion!
+ * - Automatic loading screen
+ * - Tab navigation (Transact & Activity)
+ * - All converted iOS screens available
+ * 
+ * YOUR APP NOW HAS:
+ * ✅ Tab navigation (Transact, Activity)
+ * ✅ Loading screen with error handling
+ * ✅ Transaction screen with number pad
+ * ✅ Activity/history screen
+ * ✅ Auth screens (sign up, confirmation)
+ * ✅ Custom theme matching iOS
+ * 
+ * TO TEST DIFFERENT SCREENS:
+ * Replace ContentScreen() with:
+ * - TransactScreen() - Just the transaction screen
+ * - ActivityScreen() - Just the activity list
+ * - AuthScreen() - Just the auth flow
+ * - SignUpScreen(AuthViewModel()) - Just sign up
  */
-@Composable
-fun WalletScreen(viewModel: WalletViewModel = viewModel()) {
-    val walletState by viewModel.walletState.collectAsState()
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = "Cashu Wallet",
-            style = MaterialTheme.typography.headlineLarge
-        )
-
-        Spacer(modifier = Modifier.height(32.dp))
-
-        if (walletState.isInitialized) {
-            Text(
-                text = "Balance: ${walletState.balance} sats",
-                style = MaterialTheme.typography.headlineMedium
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            if (walletState.isLoading) {
-                CircularProgressIndicator()
-            }
-
-            walletState.error?.let { error ->
-                Text(
-                    text = "Error: $error",
-                    color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            Button(onClick = { viewModel.refreshBalance() }) {
-                Text("Refresh Balance")
-            }
-        } else {
-            Text(
-                text = "Wallet not initialized",
-                style = MaterialTheme.typography.bodyLarge
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            Button(
-                onClick = { viewModel.initializeWallet() },
-                enabled = !walletState.isLoading
-            ) {
-                Text("Initialize Wallet")
-            }
-
-            if (walletState.isLoading) {
-                Spacer(modifier = Modifier.height(16.dp))
-                CircularProgressIndicator()
-            }
-
-            walletState.error?.let { error ->
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = "Error: $error",
-                    color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.bodyMedium
-                )
-            }
-        }
-
-        // Display mnemonic after initialization (for backup purposes)
-        walletState.mnemonic?.let { mnemonic ->
-            Spacer(modifier = Modifier.height(24.dp))
-            Card(
-                modifier = Modifier.padding(16.dp)
-            ) {
-                Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        text = "Backup your mnemonic:",
-                        style = MaterialTheme.typography.labelLarge
-                    )
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Text(
-                        text = mnemonic,
-                        style = MaterialTheme.typography.bodySmall
-                    )
-                }
-            }
-        }
-    }
-}
