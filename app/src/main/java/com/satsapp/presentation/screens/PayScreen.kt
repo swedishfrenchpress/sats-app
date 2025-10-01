@@ -2,10 +2,10 @@ package com.satsapp.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -15,11 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.satsapp.presentation.WalletViewModel
 import com.satsapp.ui.theme.PrimaryButton
 
@@ -62,16 +60,32 @@ fun PayScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(24.dp),
+            .padding(horizontal = 24.dp, vertical = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(24.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Spacer(modifier = Modifier.height(40.dp))
+        // BACK BUTTON (aligned with top bar)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start
+        ) {
+            IconButton(
+                onClick = onNavigateBack,
+                modifier = Modifier.size(24.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "Back",
+                    tint = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier.size(24.dp)
+                )
+            }
+        }
         
-        // SEND ICON
+        // SEND ICON (32x32 as requested)
         Box(
             modifier = Modifier
-                .size(120.dp)
+                .size(32.dp)
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.primary),
             contentAlignment = Alignment.Center
@@ -80,7 +94,7 @@ fun PayScreen(
                 imageVector = Icons.Default.Send,
                 contentDescription = "Send",
                 tint = Color.White,
-                modifier = Modifier.size(60.dp)
+                modifier = Modifier.size(16.dp)
             )
         }
         
@@ -94,7 +108,7 @@ fun PayScreen(
         
         // PAY VIA SECTION
         Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
                 text = "Pay via",
@@ -134,47 +148,13 @@ fun PayScreen(
             }
         }
         
-        Spacer(modifier = Modifier.weight(1f))
-        
-        // MEMO FIELD
-        Column(
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+        // MEMO FIELD (custom with custom keyboard)
+        CustomMemoField(
+            text = memo,
+            onTextChange = { memo = it },
+            placeholder = "Add a note...",
             modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(
-                text = "Memo",
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-            
-            BasicTextField(
-                value = memo,
-                onValueChange = { memo = it },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(48.dp)
-                    .border(
-                        width = 1.dp,
-                        color = Color.Gray,
-                        shape = RoundedCornerShape(8.dp)
-                    )
-                    .padding(horizontal = 16.dp),
-                textStyle = TextStyle(
-                    fontSize = 16.sp,
-                    color = MaterialTheme.colorScheme.onBackground
-                ),
-                decorationBox = { innerTextField ->
-                    if (memo.isEmpty()) {
-                        Text(
-                            text = "Add a note...",
-                            color = Color.Gray,
-                            fontSize = 16.sp
-                        )
-                    }
-                    innerTextField()
-                }
-            )
-        }
+        )
         
         // VIEWABLE BY RECIPIENT CHECKBOX
         Row(
@@ -197,6 +177,8 @@ fun PayScreen(
                 color = MaterialTheme.colorScheme.onBackground
             )
         }
+        
+        Spacer(modifier = Modifier.height(16.dp))
         
         // PAY BITCOIN BUTTON
         PrimaryButton(
@@ -375,4 +357,149 @@ enum class PaymentMethod(
     USERNAME("Username", Icons.Default.Person),
     QR_CODE("QR Code", Icons.Default.QrCode),
     NFC("NFC", Icons.Default.Nfc)
+}
+
+/**
+ * CustomMemoField - Memo field with custom keyboard
+ * 
+ * Uses the same styling as ThemedMemoField but with custom keyboard support
+ */
+@Composable
+private fun CustomMemoField(
+    text: String,
+    onTextChange: (String) -> Unit,
+    placeholder: String,
+    modifier: Modifier = Modifier
+) {
+    var showCustomKeyboard by remember { mutableStateOf(false) }
+    
+    Column(
+        modifier = modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        // Section header
+        Text(
+            text = "Memo",
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.onBackground
+        )
+        
+        // Text field with border (clickable to show custom keyboard)
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(80.dp)
+                .background(
+                    color = MaterialTheme.colorScheme.background,
+                    shape = RoundedCornerShape(8.dp)
+                )
+                .border(
+                    width = 1.dp,
+                    color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.3f),
+                    shape = RoundedCornerShape(8.dp)
+                )
+                .clickable { showCustomKeyboard = true }
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            contentAlignment = Alignment.TopStart
+        ) {
+            if (text.isEmpty()) {
+                Text(
+                    text = placeholder,
+                    color = MaterialTheme.colorScheme.secondary,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            } else {
+                Text(
+                    text = text,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+        }
+        
+        // Custom keyboard (when shown)
+        if (showCustomKeyboard) {
+            CustomMemoKeyboard(
+                text = text,
+                onTextChange = onTextChange,
+                onDismiss = { showCustomKeyboard = false }
+            )
+        }
+    }
+}
+
+/**
+ * CustomMemoKeyboard - Custom keyboard for memo input
+ */
+@Composable
+private fun CustomMemoKeyboard(
+    text: String,
+    onTextChange: (String) -> Unit,
+    onDismiss: () -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.surface)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        // Keyboard buttons
+        val rows = listOf(
+            listOf("Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"),
+            listOf("A", "S", "D", "F", "G", "H", "J", "K", "L"),
+            listOf("Z", "X", "C", "V", "B", "N", "M"),
+            listOf("Space", "Backspace", "Done")
+        )
+        
+        rows.forEach { row ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                row.forEach { key ->
+                    Box(modifier = Modifier.weight(1f)) {
+                        when (key) {
+                            "Space" -> {
+                                Button(
+                                    onClick = { onTextChange(text + " ") },
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Text("Space")
+                                }
+                            }
+                            "Backspace" -> {
+                                Button(
+                                    onClick = { 
+                                        if (text.isNotEmpty()) {
+                                            onTextChange(text.dropLast(1))
+                                        }
+                                    },
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Icon(Icons.Default.Backspace, contentDescription = "Backspace")
+                                }
+                            }
+                            "Done" -> {
+                                Button(
+                                    onClick = onDismiss,
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Text("Done")
+                                }
+                            }
+                            else -> {
+                                Button(
+                                    onClick = { onTextChange(text + key) },
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Text(key)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
