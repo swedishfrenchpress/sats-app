@@ -354,6 +354,7 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
                 }
         }
     }
+    
 }
 
 /**

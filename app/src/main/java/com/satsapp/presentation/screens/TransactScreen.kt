@@ -50,6 +50,7 @@ fun TransactScreen(
     var amount by remember { mutableStateOf("0") }
     var showDepositSheet by remember { mutableStateOf(false) }
     var showQRScanner by remember { mutableStateOf(false) }
+    var showPayScreen by remember { mutableStateOf(false) }
     var transactMode by remember { mutableStateOf(TransactMode.PAY) }
     
     // Load balance when screen appears
@@ -62,6 +63,17 @@ fun TransactScreen(
         QRScannerScreen(
             viewModel = viewModel,
             onNavigateBack = { showQRScanner = false }
+        )
+        return
+    }
+    
+    // Show Pay Screen if requested
+    if (showPayScreen) {
+        val amountValue = amount.toULongOrNull() ?: 0u
+        PayScreen(
+            amount = amountValue,
+            viewModel = viewModel,
+            onNavigateBack = { showPayScreen = false }
         )
         return
     }
@@ -121,10 +133,13 @@ fun TransactScreen(
                 )
             }
             
-            // PAY BUTTON - TODO: Implement send flow
+            // PAY BUTTON - Shows payment screen
             PrimaryButton(
                 onClick = {
-                    // TODO: Show send sheet when send() is implemented
+                    val amountValue = amount.toULongOrNull() ?: 0u
+                    if (amountValue > 0u) {
+                        showPayScreen = true
+                    }
                 },
                 modifier = Modifier.weight(1f)
             ) {
