@@ -1,17 +1,19 @@
 package com.satsapp.presentation.screens
 
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.satsapp.presentation.WalletViewModel
@@ -19,82 +21,315 @@ import java.text.NumberFormat
 import java.util.*
 
 /**
- * ActivityScreen - Transaction history list
+ * ActivityScreen - Transaction history matching iOS design
  * 
- * This is the Kotlin equivalent of ActivityView.swift
+ * This shows Payment Requests and Transactions sections like the iOS app
  * 
- * Shows a list of all transactions (sent, received, pending)
- * 
- * iOS Code (Swift):
- * ```swift
- * NavigationView {
- *     List {
- *         ForEach(transactions) { transaction in
- *             TransactionRowView(transaction: transaction)
- *         }
- *     }
- *     .refreshable { await loadData() }
- * }
- * ```
- * 
- * Key Differences:
- * - iOS List + ForEach → Android LazyColumn + items
- * - iOS .refreshable → Android PullRefresh (custom modifier)
- * - iOS .task → Android LaunchedEffect
+ * Features:
+ * - Payment Requests section
+ * - Transactions section with real data
+ * - Clean list-based layout
+ * - Proper icons and styling
  */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ActivityScreen(
     viewModel: WalletViewModel
 ) {
-    // Sample transactions (TODO: Replace with actual data from viewModel)
     var transactions by remember { mutableStateOf<List<Transaction>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
     
     // Load transactions when screen appears
-    // iOS: .task { await loadData() }
-    // Android: LaunchedEffect(Unit) { ... }
     LaunchedEffect(Unit) {
-        isLoading = true
-        // Load transactions from CDK wallet
         viewModel.loadTransactions { loadedTransactions ->
             transactions = loadedTransactions
             isLoading = false
         }
     }
     
-    // Main content (no top bar needed - main screen has it)
-    Box(
+    // Main container with list layout
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .padding(horizontal = 16.dp),
+        contentPadding = PaddingValues(vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
+        // PAYMENT REQUESTS SECTION
+        item {
+            PaymentRequestsSection()
+        }
+        
+        // TRANSACTIONS SECTION
+        item {
+            TransactionsSection(
+                transactions = transactions,
+                isLoading = isLoading
+            )
+        }
+    }
+}
+
+/**
+ * PaymentRequestsSection - Shows payment request options
+ */
+@Composable
+private fun PaymentRequestsSection() {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        // Section title
+        Text(
+            text = "Payment Requests",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.onBackground,
+            fontWeight = FontWeight.Bold
+        )
+        
+        // Request Link item
+        PaymentRequestItem(
+            icon = Icons.Default.Link,
+            title = "Request Link",
+            amount = "5 sat"
+        )
+    }
+}
+
+/**
+ * TransactionsSection - Shows transaction history
+ */
+@Composable
+private fun TransactionsSection(
+    transactions: List<Transaction>,
+    isLoading: Boolean
+) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        // Section title
+        Text(
+            text = "Transactions",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.onBackground,
+            fontWeight = FontWeight.Bold
+        )
+        
+        // Transaction list
         if (isLoading) {
             // Loading state
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center),
-                color = MaterialTheme.colorScheme.primary
-            )
-        } else if (transactions.isEmpty()) {
-            // Empty state
-            Text(
-                text = "No transactions yet",
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.secondary,
-                modifier = Modifier.align(Alignment.Center)
-            )
+            repeat(3) {
+                TransactionItemSkeleton()
+            }
         } else {
-            // Transaction list
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
-            ) {
-                items(transactions) { transaction ->
-                    TransactionRow(transaction = transaction)
-                    Divider()
-                }
+            // Real transactions
+            transactions.forEach { transaction ->
+                TransactionItem(transaction = transaction)
             }
         }
+    }
+}
+
+/**
+ * PaymentRequestItem - Individual payment request row
+ */
+@Composable
+private fun PaymentRequestItem(
+    icon: ImageVector,
+    title: String,
+    amount: String
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Icon with background
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .background(Color(0xFFE0D9CC)), // Light beige background
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = title,
+                tint = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.size(20.dp)
+            )
+        }
+        
+        Spacer(modifier = Modifier.width(16.dp))
+        
+        // Title
+        Text(
+            text = title,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onBackground,
+            modifier = Modifier.weight(1f)
+        )
+        
+        // Amount
+        Text(
+            text = amount,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onBackground
+        )
+    }
+}
+
+/**
+ * TransactionItem - Individual transaction row
+ */
+@Composable
+private fun TransactionItem(
+    transaction: Transaction
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Icon with background and status indicator
+        Box(
+            modifier = Modifier.size(40.dp)
+        ) {
+            // Main icon background
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .clip(CircleShape)
+                    .background(Color(0xFFE0D9CC)), // Light beige background
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = if (transaction.type == TransactionType.SENT) 
+                        Icons.Default.ArrowUpward 
+                    else 
+                        Icons.Default.ArrowDownward,
+                    contentDescription = transaction.type.name,
+                    tint = if (transaction.type == TransactionType.SENT) 
+                        Color(0xFFE57373) // Orange-red for sent
+                    else 
+                        Color(0xFF81C784), // Green for received
+                    modifier = Modifier.size(20.dp)
+                )
+            }
+            
+            // Status indicator (hourglass)
+            Box(
+                modifier = Modifier
+                    .size(16.dp)
+                    .clip(CircleShape)
+                    .background(
+                        if (transaction.type == TransactionType.SENT) 
+                            Color(0xFFE57373) 
+                        else 
+                            Color(0xFF81C784)
+                    )
+                    .align(Alignment.BottomEnd),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Schedule,
+                    contentDescription = "Status",
+                    tint = Color.White,
+                    modifier = Modifier.size(10.dp)
+                )
+            }
+        }
+        
+        Spacer(modifier = Modifier.width(16.dp))
+        
+        // Transaction details
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
+            Text(
+                text = transaction.type.name,
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+            Text(
+                text = formatTimeAgo(transaction.date),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+        
+        // Amount
+        Text(
+            text = "${transaction.amount} sat",
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onBackground
+        )
+    }
+}
+
+/**
+ * TransactionItemSkeleton - Loading placeholder
+ */
+@Composable
+private fun TransactionItemSkeleton() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Skeleton icon
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(CircleShape)
+                .background(Color(0xFFE0D9CC))
+        )
+        
+        Spacer(modifier = Modifier.width(16.dp))
+        
+        // Skeleton text
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .width(80.dp)
+                    .height(16.dp)
+                    .background(Color(0xFFE0D9CC))
+            )
+            Box(
+                modifier = Modifier
+                    .width(60.dp)
+                    .height(12.dp)
+                    .background(Color(0xFFE0D9CC))
+            )
+        }
+        
+        // Skeleton amount
+        Box(
+            modifier = Modifier
+                .width(50.dp)
+                .height(16.dp)
+                .background(Color(0xFFE0D9CC))
+        )
+    }
+}
+
+/**
+ * Format time ago string
+ */
+private fun formatTimeAgo(date: Date): String {
+    val now = Date()
+    val diff = now.time - date.time
+    val minutes = diff / (1000 * 60)
+    
+    return when {
+        minutes < 1 -> "Just now"
+        minutes < 60 -> "$minutes minutes ago"
+        else -> "${minutes / 60} hours ago"
     }
 }
 
