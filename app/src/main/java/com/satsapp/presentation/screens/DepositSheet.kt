@@ -7,6 +7,8 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -15,8 +17,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -142,29 +146,12 @@ private fun DepositInputForm(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    BasicTextField(
-                        value = amount,
-                        onValueChange = { newValue ->
-                            if (newValue.all { it.isDigit() } || newValue.isEmpty()) {
-                                onAmountChange(newValue)
-                            }
-                        },
-                        modifier = Modifier.weight(1f),
-                        textStyle = MaterialTheme.typography.bodyLarge.copy(
+                    Text(
+                        text = if (amount.isEmpty()) "0" else amount,
+                        style = MaterialTheme.typography.bodyLarge.copy(
                             color = MaterialTheme.colorScheme.onBackground
                         ),
-                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                        singleLine = true,
-                        decorationBox = { innerTextField ->
-                            if (amount.isEmpty()) {
-                                Text(
-                                    text = "0",
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    color = Color.Gray
-                                )
-                            }
-                            innerTextField()
-                        }
+                        modifier = Modifier.weight(1f)
                     )
                     
                     Text(
@@ -199,6 +186,133 @@ private fun DepositInputForm(
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.error
             )
+        }
+        
+        // CUSTOM NUMBER PAD (same as main screen)
+        Spacer(modifier = Modifier.height(16.dp))
+        DepositNumberPad(
+            amount = amount,
+            onAmountChange = onAmountChange
+        )
+    }
+}
+
+/**
+ * DepositNumberPad - Custom number pad for deposit amount input
+ * 
+ * Reuses the same design as the main screen number pad
+ */
+@Composable
+private fun DepositNumberPad(
+    amount: String,
+    onAmountChange: (String) -> Unit
+) {
+    // Button grid layout (same as main screen)
+    val buttons = listOf(
+        listOf("1", "2", "3"),
+        listOf("4", "5", "6"),
+        listOf("7", "8", "9"),
+        listOf("", "0", "⌫") // Empty, 0, backspace
+    )
+    
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        buttons.forEach { row ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                row.forEach { button ->
+                    // Each button takes equal space
+                    Box(modifier = Modifier.weight(1f)) {
+                        if (button.isNotEmpty()) {
+                            DepositNumberPadButton(
+                                onClick = {
+                                    onAmountChange(handleButtonPress(amount, button))
+                                }
+                            ) {
+                                Text(button)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * DepositNumberPadButton - Button for deposit number pad
+ * 
+ * Matches the main screen number pad button style
+ */
+@Composable
+private fun DepositNumberPadButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    content: @Composable RowScope.() -> Unit
+) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+    val scale = if (isPressed) 0.95f else 1.0f
+
+    TextButton(
+        onClick = onClick,
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = 60.dp)
+            .scale(scale),
+        enabled = enabled,
+        colors = ButtonDefaults.textButtonColors(
+            contentColor = MaterialTheme.colorScheme.onBackground,
+            disabledContentColor = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.5f)
+        ),
+        interactionSource = interactionSource,
+        content = {
+            ProvideTextStyle(value = TextStyle(
+                fontSize = MaterialTheme.typography.titleLarge.fontSize,
+                fontWeight = MaterialTheme.typography.titleLarge.fontWeight
+            )) {
+                content()
+            }
+        }
+    )
+}
+
+/**
+ * Handle number pad button press (same logic as main screen)
+ */
+private fun handleButtonPress(currentAmount: String, button: String): String {
+    return when (button) {
+        "⌫" -> {
+            // Backspace - remove last digit
+            if (currentAmount.isNotEmpty() && currentAmount != "0") {
+                val newAmount = currentAmount.dropLast(1)
+                if (newAmount.isEmpty()) "0" else newAmount
+            } else {
+                currentAmount
+            }
+        }
+        "0" -> {
+            // Don't allow leading zeros
+            if (currentAmount != "0") {
+                currentAmount + button
+            } else {
+                currentAmount
+            }
+        }
+        else -> {
+            // Regular digit
+            if (currentAmount == "0") {
+                button
+            } else {
+                currentAmount + button
+            }
         }
     }
 }
