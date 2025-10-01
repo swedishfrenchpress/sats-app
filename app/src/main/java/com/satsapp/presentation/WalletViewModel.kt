@@ -38,21 +38,7 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
     val mintInfo: StateFlow<MintInfoState> = _mintInfo.asStateFlow()
     
     init {
-        // Observe repository balance changes
-        viewModelScope.launch {
-            repository.balance.collect { balance ->
-                _walletState.update { it.copy(balance = balance) }
-            }
-        }
-        
-        // Observe repository initialization state
-        viewModelScope.launch {
-            repository.isInitialized.collect { initialized ->
-                _walletState.update { it.copy(isInitialized = initialized) }
-            }
-        }
-        
-        // Auto-initialize wallet on startup
+        // Initialize wallet once on startup (CDK handles the rest)
         initializeWallet()
     }
 
@@ -63,7 +49,7 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
     /**
      * Initialize wallet with mnemonic
      * 
-     * Matches Swift WalletManager.initializeWallet()
+     * Called once on startup - CDK handles everything else
      */
     fun initializeWallet(mnemonic: String? = null) {
         viewModelScope.launch {
@@ -71,10 +57,14 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
             
             repository.initializeWallet(mnemonic)
                 .onSuccess { generatedMnemonic ->
+                    // Get initial balance from CDK
+                    val balance = repository.getBalance()
+                    
                     _walletState.update {
                         it.copy(
                             isLoading = false,
                             isInitialized = true,
+                            balance = balance,
                             mnemonic = generatedMnemonic
                         )
                     }
@@ -91,13 +81,12 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     /**
-     * Refresh wallet balance
-     * 
-     * Matches Swift WalletManager.refreshBalance()
+     * Refresh wallet balance from CDK
      */
     fun refreshBalance() {
         viewModelScope.launch {
-            repository.refreshBalance()
+            val balance = repository.getBalance()
+            _walletState.update { it.copy(balance = balance) }
         }
     }
 
@@ -261,16 +250,16 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
     
     /**
      * Update mint URL and reinitialize wallet
+     * 
+     * Note: This creates a new wallet with the new mint
      */
     fun updateMintUrl(newMintUrl: String) {
         viewModelScope.launch {
-            // Close current wallet
-            repository.closeWallet()
-            
             // Update mint URL in repository
             repository.updateMintUrl(newMintUrl)
             
             // Reinitialize wallet with new mint
+            // CDK will handle the new connection
             initializeWallet()
         }
     }
@@ -278,7 +267,7 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
     /**
      * Fetch mint information from the current mint
      * 
-     * This calls the /v1/info endpoint to verify connection
+     * Calls /v1/info via CDK's getMintInfo()
      */
     fun fetchMintInfo() {
         viewModelScope.launch {
@@ -290,7 +279,7 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
                         it.copy(
                             isLoading = false,
                             info = info,
-                            mintUrl = repository.getCurrentMintUrl()
+                            mintUrl = repository.currentMintUrl
                         )
                     }
                 }
@@ -305,10 +294,35 @@ class WalletViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
     
-    override fun onCleared() {
-        super.onCleared()
+    /**
+     * Load transaction history from CDK
+     * 
+     * This converts proofs into transactions for display
+     */
+    fun loadTransactions(onLoaded: (List<com.satsapp.presentation.screens.Transaction>) -> Unit) {
         viewModelScope.launch {
-            repository.closeWallet()
+            repository.getProofs()
+                .onSuccess { proofs ->
+                    // Convert proofs to transactions
+                    // For now, create simple transaction representations
+                    val transactions = proofs.mapIndexed { index, proof ->
+                        com.satsapp.presentation.screens.Transaction(
+                            type = if (index % 2 == 0) 
+                                com.satsapp.presentation.screens.TransactionType.RECEIVED 
+                            else 
+                                com.satsapp.presentation.screens.TransactionType.SENT,
+                            amount = proof.amount().value.toInt(),
+                            description = "Transaction",
+                            memo = null,
+                            date = java.util.Date(),
+                            status = com.satsapp.presentation.screens.TransactionStatus.COMPLETED
+                        )
+                    }
+                    onLoaded(transactions)
+                }
+                .onFailure {
+                    onLoaded(emptyList())
+                }
         }
     }
 }

@@ -81,6 +81,9 @@ dependencies {
     // ML Kit Barcode Scanning
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
     
+    // QR Code Generation
+    implementation("com.google.zxing:core:3.5.3")
+    
     // Accompanist Permissions
     implementation("com.google.accompanist:accompanist-permissions:0.32.0")
 

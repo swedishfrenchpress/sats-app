@@ -1,6 +1,7 @@
 package com.satsapp.presentation.screens
 
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -55,61 +56,42 @@ fun ActivityScreen(
     // Android: LaunchedEffect(Unit) { ... }
     LaunchedEffect(Unit) {
         isLoading = true
-        // TODO: Load actual transactions
-        // transactions = viewModel.listTransactions()
-        kotlinx.coroutines.delay(1000) // Simulate network call
-        transactions = emptyList() // No transactions yet
-        isLoading = false
+        // Load transactions from CDK wallet
+        viewModel.loadTransactions { loadedTransactions ->
+            transactions = loadedTransactions
+            isLoading = false
+        }
     }
     
-    // Scaffold with top bar (like iOS NavigationView)
-    Scaffold(
-        topBar = {
-            // TODO: This will be replaced with BalanceToolbar
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(
-                        text = "Activity",
-                        style = MaterialTheme.typography.titleLarge
-                    )
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background
-                )
+    // Main content (no top bar needed - main screen has it)
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+    ) {
+        if (isLoading) {
+            // Loading state
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = MaterialTheme.colorScheme.primary
             )
-        }
-    ) { paddingValues ->
-        // Content with pull-to-refresh
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-        ) {
-            if (isLoading) {
-                // Loading state
-                CircularProgressIndicator(
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            } else if (transactions.isEmpty()) {
-                // Empty state
-                Text(
-                    text = "No transactions yet",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.secondary,
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            } else {
-                // Transaction list
-                // iOS: List with ForEach
-                // Android: LazyColumn with items
-                LazyColumn(
-                    modifier = Modifier.fillMaxSize(),
-                    contentPadding = PaddingValues(vertical = 8.dp)
-                ) {
-                    items(transactions) { transaction ->
-                        TransactionRow(transaction = transaction)
-                        Divider()
-                    }
+        } else if (transactions.isEmpty()) {
+            // Empty state
+            Text(
+                text = "No transactions yet",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.secondary,
+                modifier = Modifier.align(Alignment.Center)
+            )
+        } else {
+            // Transaction list
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
+            ) {
+                items(transactions) { transaction ->
+                    TransactionRow(transaction = transaction)
+                    Divider()
                 }
             }
         }

@@ -29,18 +29,15 @@ private const val TAG = "CashuWalletRepo"
 class CashuWalletRepository(
     private val context: Context
 ) {
+    // The CDK Wallet - initialized once and reused
     private var wallet: Wallet? = null
     private var database: WalletSqliteDatabase? = null
-    private var currentMintUrl: String = "https://fake.thesimplekid.dev"
-    
-    private val _balance = MutableStateFlow(0uL)
-    val balance: StateFlow<ULong> = _balance.asStateFlow()
-    
-    private val _isInitialized = MutableStateFlow(false)
-    val isInitialized: StateFlow<Boolean> = _isInitialized.asStateFlow()
+    var currentMintUrl: String = "https://fake.thesimplekid.dev"
+        private set
     
     /**
-     * Update the mint URL (requires wallet reinitialization)
+     * Update the mint URL
+     * Note: Requires reinitializing wallet with new mint
      */
     fun updateMintUrl(newMintUrl: String) {
         currentMintUrl = newMintUrl
@@ -93,13 +90,7 @@ class CashuWalletRepository(
                 config = config
             )
             Log.d(TAG, "✅ Wallet object created successfully")
-            
-            _isInitialized.value = true
-            Log.d(TAG, "✅ Wallet initialized flag set to true")
-            
-            // Refresh balance after initialization
-            refreshBalance()
-            Log.d(TAG, "✅ Initial balance refresh called")
+            Log.d(TAG, "✅ CDK Wallet is now managing all state")
             
             Result.success(walletMnemonic)
         } catch (e: Exception) {
@@ -136,14 +127,9 @@ class CashuWalletRepository(
     }
     
     /**
-     * Refresh balance and update state flow
+     * Check if wallet is initialized
      */
-    suspend fun refreshBalance() = withContext(Dispatchers.IO) {
-        Log.d(TAG, "🔄 Refreshing balance...")
-        val newBalance = getBalance()
-        _balance.value = newBalance
-        Log.d(TAG, "✅ Balance updated in StateFlow: $newBalance sats")
-    }
+    fun isWalletInitialized(): Boolean = wallet != null
     
     /**
      * Generate a mint quote to receive funds via Lightning
@@ -212,8 +198,8 @@ class CashuWalletRepository(
                 total + proof.amount().value
             }
             
-            // Refresh balance after minting
-            refreshBalance()
+            Log.d(TAG, "✅ Minting complete! Total: $totalMinted sats")
+            Log.d(TAG, "💡 CDK has updated balance automatically")
             
             Result.success(totalMinted)
         } catch (e: Exception) {
@@ -262,10 +248,7 @@ class CashuWalletRepository(
             
             Log.d(TAG, "✅ Token received successfully!")
             Log.d(TAG, "💰 Amount received: ${amount.value} sats")
-            
-            // Refresh balance after receiving
-            refreshBalance()
-            Log.d(TAG, "✅ Balance refreshed")
+            Log.d(TAG, "💡 CDK has updated balance automatically")
             
             Result.success(amount)
         } catch (e: Exception) {
@@ -364,20 +347,6 @@ class CashuWalletRepository(
         }
     }
     
-    /**
-     * Get current mint URL
-     */
-    fun getCurrentMintUrl(): String = currentMintUrl
-    
-    /**
-     * Close wallet and cleanup resources
-     */
-    suspend fun closeWallet() = withContext(Dispatchers.IO) {
-        wallet = null
-        database = null
-        _isInitialized.value = false
-        _balance.value = 0uL
-    }
 }
 
 /*
