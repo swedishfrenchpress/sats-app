@@ -1,5 +1,6 @@
 package com.satsapp.presentation.screens
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -40,6 +41,7 @@ import java.util.*
  * - iOS .refreshable → Android PullRefresh (custom modifier)
  * - iOS .task → Android LaunchedEffect
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ActivityScreen(
     viewModel: WalletViewModel
@@ -226,9 +228,9 @@ enum class TransactionStatus {
 // MARK: - Helper Functions
 
 private fun getTransactionIcon(type: TransactionType) = when (type) {
-    TransactionType.RECEIVED -> Icons.Default.ArrowCircleDown
-    TransactionType.SENT -> Icons.Default.ArrowCircleUp
-    TransactionType.REQUEST -> Icons.Default.Schedule
+    TransactionType.RECEIVED -> Icons.Default.ArrowDownward
+    TransactionType.SENT -> Icons.Default.ArrowUpward
+    TransactionType.REQUEST -> Icons.Default.AccessTime
 }
 
 private fun getIconColor(type: TransactionType, status: TransactionStatus): Color {

@@ -417,23 +417,15 @@ fun ThemedIconButton(
     }
 }
 
-// MARK: - Text Style Extension Functions
-/**
- * Helper extension functions to apply iOS text styles
- * These match the Text extensions in iOS Theme.swift
+// MARK: - Text Style Helper Comments
+/*
+ * Example usage of text styles in your composables:
+ * 
+ * Text("1000", style = MaterialTheme.typography.displayLarge) // Amount style
+ * Text("Balance", style = MaterialTheme.typography.headlineLarge) // Title style
+ * Text("Transactions", style = MaterialTheme.typography.titleMedium) // Section header
+ * Text("Details here", style = MaterialTheme.typography.bodyMedium) // Body style
+ * Text("Hint text", style = MaterialTheme.typography.labelSmall) // Caption style
  */
-
-// Amount style - for large balance displays
-@Composable
-fun Text.AmountStyle() {
-    // This is just a helper comment - use MaterialTheme.typography.displayLarge directly
-}
-
-// Example usage in your composables:
-// Text("1000", style = MaterialTheme.typography.displayLarge) // Amount style
-// Text("Balance", style = MaterialTheme.typography.headlineLarge) // Title style
-// Text("Transactions", style = MaterialTheme.typography.titleMedium) // Section header
-// Text("Details here", style = MaterialTheme.typography.bodyMedium) // Body style
-// Text("Hint text", style = MaterialTheme.typography.labelSmall) // Caption style
 
 

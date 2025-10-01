@@ -2,20 +2,25 @@ package com.satsapp.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.satsapp.data.repository.CashuWalletRepository
 import com.satsapp.domain.model.*
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
 
 /**
  * ViewModel for managing wallet state and operations
- * Coordinates between UI and repository layer
+ * 
+ * NOTE: This is currently using MOCK/FAKE data for UI testing!
+ * CDK backend is temporarily disabled to test the UI screens.
+ * 
+ * TODO: Re-enable CashuWalletRepository when CDK API is updated
  */
-class WalletViewModel(
-    private val repository: CashuWalletRepository = CashuWalletRepository()
-) : ViewModel() {
+class WalletViewModel : ViewModel() {
 
-    private val _walletState = MutableStateFlow(WalletState())
+    private val _walletState = MutableStateFlow(WalletState(
+        isInitialized = true,  // Start initialized for UI testing
+        balance = 1000u        // Mock balance of 1000 sats
+    ))
     val walletState: StateFlow<WalletState> = _walletState.asStateFlow()
 
     private val _mintState = MutableStateFlow(MintState())
@@ -30,236 +35,137 @@ class WalletViewModel(
     private val _receiveState = MutableStateFlow(TokenTransferState())
     val receiveState: StateFlow<TokenTransferState> = _receiveState.asStateFlow()
 
-    init {
-        // Observe repository state changes
-        viewModelScope.launch {
-            repository.balance.collect { balance ->
-                _walletState.update { it.copy(balance = balance) }
-            }
-        }
-
-        viewModelScope.launch {
-            repository.isInitialized.collect { initialized ->
-                _walletState.update { it.copy(isInitialized = initialized) }
-            }
-        }
-    }
-
+    // ========================================
+    // MOCK FUNCTIONS FOR UI TESTING
+    // (Backend temporarily disabled)
+    // ========================================
+    
     /**
-     * Initialize the wallet
-     * @param mnemonic Optional mnemonic for wallet recovery
+     * Initialize the wallet (MOCK VERSION - just simulates loading)
      */
     fun initializeWallet(mnemonic: String? = null) {
         viewModelScope.launch {
             _walletState.update { it.copy(isLoading = true, error = null) }
-
-            repository.initializeWallet(mnemonic = mnemonic)
-                .onSuccess { generatedMnemonic ->
-                    _walletState.update {
-                        it.copy(
-                            isLoading = false,
-                            isInitialized = true,
-                            mnemonic = generatedMnemonic
-                        )
-                    }
-                }
-                .onFailure { error ->
-                    _walletState.update {
-                        it.copy(
-                            isLoading = false,
-                            error = error.message ?: "Failed to initialize wallet"
-                        )
-                    }
-                }
+            
+            // Simulate network delay
+            delay(2000)
+            
+            // Set wallet as initialized with mock mnemonic
+            _walletState.update {
+                it.copy(
+                    isLoading = false,
+                    isInitialized = true,
+                    balance = 1000u,
+                    mnemonic = "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12"
+                )
+            }
         }
     }
 
     /**
-     * Create a mint quote to receive funds
-     * @param amount Amount in sats
+     * Refresh balance (MOCK VERSION - just updates UI)
+     */
+    fun refreshBalance() {
+        viewModelScope.launch {
+            _walletState.update { it.copy(isLoading = true) }
+            delay(500)
+            _walletState.update { it.copy(isLoading = false) }
+        }
+    }
+
+    /**
+     * Create mint quote (MOCK VERSION)
      */
     fun createMintQuote(amount: ULong, description: String = "") {
         viewModelScope.launch {
             _mintState.update { it.copy(isProcessing = true, error = null, amount = amount) }
-
-            repository.createMintQuote(amount, description)
-                .onSuccess { quote ->
-                    _mintState.update {
-                        it.copy(
-                            isProcessing = false,
-                            quoteId = quote.id,
-                            paymentRequest = quote.request
-                        )
-                    }
-                }
-                .onFailure { error ->
-                    _mintState.update {
-                        it.copy(
-                            isProcessing = false,
-                            error = error.message ?: "Failed to create mint quote"
-                        )
-                    }
-                }
+            delay(1000)
+            _mintState.update {
+                it.copy(
+                    isProcessing = false,
+                    quoteId = "mock-quote-123",
+                    paymentRequest = "lnbc1000n1..."
+                )
+            }
         }
     }
 
     /**
-     * Mint tokens after payment is confirmed
+     * Mint tokens (MOCK VERSION)
      */
     fun mintTokens() {
-        val quoteId = _mintState.value.quoteId ?: return
-
         viewModelScope.launch {
-            _mintState.update { it.copy(isProcessing = true, error = null) }
-
-            repository.mintTokens(quoteId)
-                .onSuccess { amount ->
-                    _mintState.update {
-                        it.copy(
-                            isProcessing = false,
-                            isCompleted = true
-                        )
-                    }
-                    refreshBalance()
-                }
-                .onFailure { error ->
-                    _mintState.update {
-                        it.copy(
-                            isProcessing = false,
-                            error = error.message ?: "Failed to mint tokens"
-                        )
-                    }
-                }
+            _mintState.update { it.copy(isProcessing = true) }
+            delay(1000)
+            _mintState.update { it.copy(isProcessing = false, isCompleted = true) }
+            _walletState.update { it.copy(balance = it.balance + 100u) }
         }
     }
 
     /**
-     * Create a melt quote to send payment via Lightning
-     * @param invoice Lightning invoice
+     * Create melt quote (MOCK VERSION)
      */
     fun createMeltQuote(invoice: String) {
         viewModelScope.launch {
             _meltState.update { it.copy(isProcessing = true, error = null, invoice = invoice) }
-
-            repository.createMeltQuote(invoice)
-                .onSuccess { quote ->
-                    _meltState.update {
-                        it.copy(
-                            isProcessing = false,
-                            quoteId = quote.id,
-                            amount = quote.amount.value,
-                            fee = quote.feeReserve.value
-                        )
-                    }
-                }
-                .onFailure { error ->
-                    _meltState.update {
-                        it.copy(
-                            isProcessing = false,
-                            error = error.message ?: "Failed to create melt quote"
-                        )
-                    }
-                }
+            delay(1000)
+            _meltState.update {
+                it.copy(
+                    isProcessing = false,
+                    quoteId = "mock-melt-quote-456",
+                    amount = 100u,
+                    fee = 5u
+                )
+            }
         }
     }
 
     /**
-     * Execute melt to pay Lightning invoice
+     * Melt tokens (MOCK VERSION)
      */
     fun meltTokens() {
-        val quoteId = _meltState.value.quoteId ?: return
-
         viewModelScope.launch {
-            _meltState.update { it.copy(isProcessing = true, error = null) }
-
-            repository.meltTokens(quoteId)
-                .onSuccess { response ->
-                    _meltState.update {
-                        it.copy(
-                            isProcessing = false,
-                            isCompleted = true,
-                            isPaid = response.isPaid
-                        )
-                    }
-                    refreshBalance()
-                }
-                .onFailure { error ->
-                    _meltState.update {
-                        it.copy(
-                            isProcessing = false,
-                            error = error.message ?: "Failed to melt tokens"
-                        )
-                    }
-                }
+            _meltState.update { it.copy(isProcessing = true) }
+            delay(1000)
+            _meltState.update { it.copy(isProcessing = false, isCompleted = true, isPaid = true) }
+            _walletState.update { it.copy(balance = if (it.balance > 100u) it.balance - 100u else 0u) }
         }
     }
 
     /**
-     * Send tokens to another Cashu wallet
-     * @param amount Amount in sats
+     * Send tokens (MOCK VERSION)
      */
     fun sendTokens(amount: ULong) {
         viewModelScope.launch {
             _sendState.update { it.copy(isProcessing = true, error = null, amount = amount) }
-
-            repository.sendTokens(amount)
-                .onSuccess { token ->
-                    _sendState.update {
-                        it.copy(
-                            isProcessing = false,
-                            isCompleted = true,
-                            token = token
-                        )
-                    }
-                    refreshBalance()
-                }
-                .onFailure { error ->
-                    _sendState.update {
-                        it.copy(
-                            isProcessing = false,
-                            error = error.message ?: "Failed to send tokens"
-                        )
-                    }
-                }
+            delay(1000)
+            _sendState.update {
+                it.copy(
+                    isProcessing = false,
+                    isCompleted = true,
+                    token = "cashuAeyJ0eXAiOiJjYXNodSIsICJ..."
+                )
+            }
+            _walletState.update { it.copy(balance = if (it.balance > amount) it.balance - amount else 0u) }
         }
     }
 
     /**
-     * Receive tokens from another Cashu wallet
-     * @param token Encoded token string
+     * Receive tokens (MOCK VERSION)
      */
     fun receiveTokens(token: String) {
         viewModelScope.launch {
             _receiveState.update { it.copy(isProcessing = true, error = null, token = token) }
-
-            repository.receiveTokens(token)
-                .onSuccess { amount ->
-                    _receiveState.update {
-                        it.copy(
-                            isProcessing = false,
-                            isCompleted = true,
-                            amount = amount.value
-                        )
-                    }
-                    refreshBalance()
-                }
-                .onFailure { error ->
-                    _receiveState.update {
-                        it.copy(
-                            isProcessing = false,
-                            error = error.message ?: "Failed to receive tokens"
-                        )
-                    }
-                }
-        }
-    }
-
-    /**
-     * Refresh wallet balance
-     */
-    fun refreshBalance() {
-        viewModelScope.launch {
-            repository.refreshBalance()
+            delay(1000)
+            val mockAmount = 50u
+            _receiveState.update {
+                it.copy(
+                    isProcessing = false,
+                    isCompleted = true,
+                    amount = mockAmount.toLong().toULong()
+                )
+            }
+            _walletState.update { it.copy(balance = it.balance + mockAmount) }
         }
     }
 
@@ -289,12 +195,5 @@ class WalletViewModel(
      */
     fun resetReceiveState() {
         _receiveState.value = TokenTransferState()
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        viewModelScope.launch {
-            repository.closeWallet()
-        }
     }
 }

@@ -1,9 +1,10 @@
 package com.satsapp.presentation.screens
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.QrCode
+import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -40,6 +41,7 @@ import com.satsapp.ui.theme.PrimaryButton
  * .sheet(isPresented: $showingTransactSheet) { ... }
  * ```
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TransactScreen(
     viewModel: WalletViewModel
@@ -122,7 +124,7 @@ fun TransactScreen(
                     }
                 ) {
                     Icon(
-                        imageVector = Icons.Default.QrCode,
+                        imageVector = Icons.Default.QrCodeScanner,
                         contentDescription = "Scan QR Code",
                         tint = MaterialTheme.colorScheme.primary
                     )
