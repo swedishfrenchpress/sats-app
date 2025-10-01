@@ -20,6 +20,37 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.satsapp.presentation.WalletViewModel
 import com.satsapp.ui.theme.PrimaryButton
+import android.graphics.Bitmap
+import androidx.compose.foundation.Image
+import androidx.compose.ui.graphics.asImageBitmap
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.EncodeHintType
+import com.google.zxing.qrcode.QRCodeWriter
+import com.google.zxing.common.BitMatrix
+
+/**
+ * Generate QR code bitmap from text
+ */
+private fun generateQRCodeBitmap(text: String, size: Int = 512): Bitmap {
+    val writer = QRCodeWriter()
+    val hints = mapOf(EncodeHintType.CHARACTER_SET to "UTF-8")
+    val bitMatrix: BitMatrix = writer.encode(text, BarcodeFormat.QR_CODE, size, size, hints)
+    
+    val width = bitMatrix.width
+    val height = bitMatrix.height
+    val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+    
+    for (x in 0 until width) {
+        for (y in 0 until height) {
+            bitmap.setPixel(
+                x, y,
+                if (bitMatrix[x, y]) android.graphics.Color.BLACK else android.graphics.Color.WHITE
+            )
+        }
+    }
+    
+    return bitmap
+}
 
 /**
  * PayScreen - Payment screen matching iOS design
@@ -338,7 +369,13 @@ private fun PayQRCodeScreen(
                 textAlign = TextAlign.Center
             )
             
-            // TODO: Generate and display QR code from token
+            // Generate and display QR code from token
+            val qrCodeBitmap = remember(sendState.token) {
+                sendState.token?.let { token ->
+                    generateQRCodeBitmap(token, 256)
+                }
+            }
+            
             Box(
                 modifier = Modifier
                     .size(200.dp)
@@ -346,12 +383,20 @@ private fun PayQRCodeScreen(
                     .border(1.dp, Color.Gray, RoundedCornerShape(8.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "QR Code\n${sendState.token}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = Color.Black,
-                    textAlign = TextAlign.Center
-                )
+                if (qrCodeBitmap != null) {
+                    Image(
+                        bitmap = qrCodeBitmap.asImageBitmap(),
+                        contentDescription = "QR Code",
+                        modifier = Modifier.size(180.dp)
+                    )
+                } else {
+                    Text(
+                        text = "Generating QR Code...",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = Color.Black,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
             
             Text(
